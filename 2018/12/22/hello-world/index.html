@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="D Blog">
 <meta property="og:description" content="Disini saya mau membahas tentang bagaimana sih membuat blog dengan Hexo, untuk penjelasan lebih lanjut tentang Hexo tidak akan saya tulis disini, jadi silahkan baca sendiri ya. Dokumentasi tentang Hex">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-27T01:16:41.686Z">
+<meta property="og:updated_time" content="2018-12-27T01:24:25.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Membuat Blog Dengan Hexo">
 <meta name="twitter:description" content="Disini saya mau membahas tentang bagaimana sih membuat blog dengan Hexo, untuk penjelasan lebih lanjut tentang Hexo tidak akan saya tulis disini, jadi silahkan baca sendiri ya. Dokumentasi tentang Hex">
@@ -100,10 +100,6 @@
                 
                   <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
-                
                   <li> <a class="main-nav-link" href="/about">About</a> </li>
                 
                   <li><div id="search-form-wrap">
@@ -178,6 +174,8 @@
 	</a>
 
       
+    <a class="article-category-link" href="/categories/tutorial/">tutorial</a>
+
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -196,10 +194,12 @@
 <p><em>namablog</em> itu bisa kalian ganti sesuai keinginan, selanjutnya masuk ke direktori blog kalian.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> namablog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
 <p>selamat kalian sudah berhasil membuat blog kalian dengan Hexo, lanjut ke tahap selanjutnya.</p>
 <h3 id="Membuat-Postingan"><a href="#Membuat-Postingan" class="headerlink" title="Membuat Postingan"></a>Membuat Postingan</h3><p>Untuk membuat postingan kalian bisa menggunakan perintah ini.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"judul postingan"</span></span><br></pre></td></tr></table></figure></p>
-<p>secara otomatis, Hexo akan membuat file “judul postingan.md” pada direktori <figure class="highlight plain"><figcaption><span>Lalu jika kita ingin membuat sebuah *draft* atau halaman khusus untuk blog kita, kita bisa menggunakan perintah.</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">``` bash</span><br><span class="line">$ hexo new draft &quot;judul draft&quot;</span><br></pre></td></tr></table></figure></p>
+<p>secara otomatis, Hexo akan membuat file “judul postingan.md” pada direktori <code>source/_post</code>. Lalu jika kita ingin membuat sebuah <em>draft</em> atau halaman khusus untuk blog kita, kita bisa menggunakan perintah.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new draft <span class="string">"judul draft"</span></span><br></pre></td></tr></table></figure></p>
 <p>atau<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"judul halaman"</span></span><br></pre></td></tr></table></figure></p>
 <p>penjelasan lainnya tentang membuat postingan bisa kalian baca <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">disini</a>.</p>
-<h3 id="Menjalankan-Server"><a href="#Menjalankan-Server" class="headerlink" title="Menjalankan Server"></a>Menjalankan Server</h3><p>Dengan Hexo, kita dapat melihat <em>preview</em> blog kita sebelum diluncurkan atau kita <em>deploy</em> ke GitHub dengan menggunakan perintah ini.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">``` </span><br><span class="line">atau ```$ hexo server --draft``` untuk melihat *preview* blog kita beserta file yang masih menjadi draft. Perintah ini akan membuka tautan http://localhost:4000/ dan kita dapat membukanya melalui browser kesayangan.</span><br><span class="line"></span><br><span class="line"><span class="comment">### Generate dan Deploy</span></span><br><span class="line">Langkah selanjutnya setelah membuat postingan dan menjalankan server yaitu generate dan deploy, perintah ini akan mempublish tulisan kita ke repo GitHub agar dapat ditampilkan seperti blog pada umumnya, tapi sebelum itu kita install dahulu plugin ```hexo-deployer-plugin``` agar mempermudah proses *deploy*, caranya cukup jalankan perintah ini ```$ npm install hexo-deployer-git --save```. Jika sudah, kita edit berkas ```_config.yml``` dan tambahkan data ini di dalamnya.</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/username/username.github.io</span><br><span class="line">  branch: master</span><br><span class="line">  message: <span class="string">"&#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125; "</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Menjalankan-Server"><a href="#Menjalankan-Server" class="headerlink" title="Menjalankan Server"></a>Menjalankan Server</h3><p>Dengan Hexo, kita dapat melihat <em>preview</em> blog kita sebelum diluncurkan atau kita <em>deploy</em> ke GitHub dengan menggunakan perintah ini.<br><code>$ hexo server</code> atau <code>$ hexo server --draft</code> untuk melihat <em>preview</em> blog kita beserta file yang masih menjadi draft. Perintah ini akan membuka tautan <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> dan kita dapat membukanya melalui browser kesayangan.</p>
+<h3 id="Generate-dan-Deploy"><a href="#Generate-dan-Deploy" class="headerlink" title="Generate dan Deploy"></a>Generate dan Deploy</h3><p>Langkah selanjutnya setelah membuat postingan dan menjalankan server yaitu generate dan deploy, perintah ini akan mempublish tulisan kita ke repo GitHub agar dapat ditampilkan seperti blog pada umumnya, tapi sebelum itu kita install dahulu plugin <code>hexo-deployer-plugin</code> agar mempermudah proses <em>deploy</em>, caranya cukup jalankan perintah ini <code>$ npm install hexo-deployer-git --save</code> . Jika sudah, kita edit berkas <code>_config.yml</code> dan tambahkan data ini di dalamnya.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/username/username.github.io</span><br><span class="line">  branch: master</span><br><span class="line">  message: <span class="string">"&#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125; "</span></span><br></pre></td></tr></table></figure>
 <p>lalu kalian bisa menjalankan perintah <em>generate</em> dan <em>deploy</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
 <p>Informasi lainnya bisa kalian baca disini <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a> dan disini <a href="https://hexo.io/docs/generating" target="_blank" rel="noopener">Generate</a>.</p>
 <p>Selamat, blog kita sudah tayang dan dapat diakses oleh semua orang!<br>Terima kasih kepada para pembaca, semoga tulisan saya ini bermanfaat dan tidak membuat bingung hehe, jika ada pertanyaan atau bingung silahkan tinggalkan komentar dibawah, sampai jumpa di tulisan selanjutnya.<br></p>
@@ -253,7 +253,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tutorialnya"><span class="nav-number">1.</span> <span class="nav-text">Tutorialnya</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Hexo-dan-Inisialisasi-Blog"><span class="nav-number">1.1.</span> <span class="nav-text">Install Hexo dan Inisialisasi Blog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Membuat-Postingan"><span class="nav-number">1.2.</span> <span class="nav-text">Membuat Postingan</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Menjalankan-Server"><span class="nav-number">1.3.</span> <span class="nav-text">Menjalankan Server</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tutorialnya"><span class="nav-number">1.</span> <span class="nav-text">Tutorialnya</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Hexo-dan-Inisialisasi-Blog"><span class="nav-number">1.1.</span> <span class="nav-text">Install Hexo dan Inisialisasi Blog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Membuat-Postingan"><span class="nav-number">1.2.</span> <span class="nav-text">Membuat Postingan</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Menjalankan-Server"><span class="nav-number">1.3.</span> <span class="nav-text">Menjalankan Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-dan-Deploy"><span class="nav-number">1.4.</span> <span class="nav-text">Generate dan Deploy</span></a></li></ol></li></ol>
     
     </div>
   </aside>
@@ -303,10 +303,6 @@
     <a href="/" class="mobile-nav-link">Home</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/categories" class="mobile-nav-link">Categories</a>
-  
-    <a href="/tags" class="mobile-nav-link">Tags</a>
   
     <a href="/about" class="mobile-nav-link">About</a>
   
