@@ -449,6 +449,17 @@
       <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
       <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
 
+      <div class="modal-body">
+        <div style="margin:6px;">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="history.back()" aria-expanded="true" aria-controls="collapseOne">
+            HOME
+          </a>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          Back to Home
+        </div>
+      </div>
 
       <div class="modal-body">
           <div style="margin:6px;">
@@ -496,13 +507,13 @@
       </div>
     </div>
   </div>
-</div>
+</div></div>
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
   
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1545876711584')
+  navigator.serviceWorker.register('/sw.js?t=1545897823970')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
