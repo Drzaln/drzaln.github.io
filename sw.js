@@ -32,9 +32,9 @@ toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":5};
 
 
-toolbox.router.any(/hm.baidu.com/, toolbox.networkOnly);
+toolbox.router.any(/hm.baidu.com/, toolbox.fastest);
 
-toolbox.router.any(/.*\.(js|css|jpg|jpeg|png|gif)$/, toolbox.cacheFirst);
+toolbox.router.any(/.*\.(js|css|jpg|jpeg|png|gif)$/, toolbox.fastest);
 
-toolbox.router.any(/\//, toolbox.networkFirst);
+toolbox.router.any(/\//, toolbox.fastest);
 
