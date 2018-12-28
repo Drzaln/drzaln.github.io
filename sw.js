@@ -24,6 +24,8 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
+  precacheUrls.push('/2018/12/28/Membuat-PWA-Dengan-Hexo/');
+
   precacheUrls.push('/2018/12/22/hello-world/');
 
 toolbox.precache(precacheUrls);
