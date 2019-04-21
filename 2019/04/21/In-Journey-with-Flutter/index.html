@@ -3,20 +3,28 @@
 <head><link rel=manifest href=/manifest.json><meta name="generator" content="Hexo 3.8.0"><link rel="manifest" href="/manifest.json">
   <meta charset="utf-8">
   
-  <title>D Blog</title>
+  <title>in journey with flutter | D Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="Flutter">
   
   
   
-  <meta name="keywords" content="blog, tutorial, linux, hexo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="D Blog">
-<meta property="og:url" content="https://drzaln.github.io/index.html">
+  
+  <meta name="description" content="Disini saya mau curhat sedikit tentang Flutter.">
+<meta name="keywords" content="Flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="In Journey with Flutter">
+<meta property="og:url" content="https://drzaln.github.io/2019/04/21/In-Journey-with-Flutter/index.html">
 <meta property="og:site_name" content="D Blog">
+<meta property="og:description" content="Disini saya mau curhat sedikit tentang Flutter.">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://drzaln.github.io/assets/flutter.png">
+<meta property="og:updated_time" content="2019-04-21T09:26:53.998Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="D Blog">
+<meta name="twitter:title" content="In Journey with Flutter">
+<meta name="twitter:description" content="Disini saya mau curhat sedikit tentang Flutter.">
+<meta name="twitter:image" content="https://drzaln.github.io/assets/flutter.png">
   
     <link rel="alternate" href="/atom.xml" title="D Blog" type="application/atom+xml">
   
@@ -45,11 +53,13 @@
   <link rel="stylesheet" href="/css/bootstrap.css">
 
   
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/dialog.css">
   
 
   
 
+  
+    <link rel="stylesheet" href="/css/header-post.css">
   
 
   
@@ -60,130 +70,94 @@
 </html>
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
-  
-    <header id="header">
-
-	<!-- 背景图模式 -->
-	
-
-    
-      <div id="intrologo" class="intro-logo">
-    
- 
-
-
-    <canvas width="100%" height="100%"></canvas>
-    <script>
-      var c = document.getElementsByTagName('canvas')[0],
-          x = c.getContext('2d'),
-          w = window.innerWidth,
-          h = window.innerHeight,
-          pr = window.devicePixelRatio || 1,
-          f = 90,
-          q,
-          m = Math,
-          r = 0,
-          u = m.PI*2,
-          v = m.cos,
-          z = m.random
-      c.width = w*pr
-      c.height = h*pr
-      x.scale(pr, pr)
-      x.globalAlpha = 0.6
-
-      <!-- 折线Polyline背景 -->
-      
-        function i(){
-            x.clearRect(0,0,w,h)
-            q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
-            while(q[1].x<w+f) d(q[0], q[1])
-        }
-        function d(i,j){   
-            x.beginPath()
-            x.moveTo(i.x, i.y)
-            x.lineTo(j.x, j.y)
-            var k = j.x + (z()*2-0.25)*f,
-                n = y(j.y)
-            x.lineTo(k, n)
-            x.closePath()
-            r-=u/-50
-            x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
-            x.fill()
-            q[0] = q[1]
-            q[1] = {x:k,y:n}
-        }
-        function y(p){
-            var t = p + (z()*2-1.1)*f
-            return (t>h||t<0) ? y(p) : t
-        }
-        document.getElementById("intrologo").onclick = i
-        document.getElementById("intrologo").ontouchstart = i
-        i()
-
-      <!-- 多边形trianglify背景 -->
-      
-    </script>
-    
-
-    
-      <div id="homelogo" class="homelogo"> 
-    
-
-        
-          <div class="homelogoback">
-            <h1><a href="#content" id="logo">D Blog</a></h1>
-            <h3></h3>
-            <h5>Doddy Rizal Novianto</h5>
-            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
-          </div>
-        
-    
-    </div>
-  </div>
-
-  <!-- 自适应主页背景大图 -->
-  
-
- <!-- home_logo_image居中 -->
- 
-    <script>
-        var homelogodiv = document.getElementById("homelogo");
-        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
-          homelogodiv.style.width = document.body.clientWidth + "px";
-          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
-        } else {
-          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
-          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
-        }
-    </script>
-  
-
-  <div class="intro-navigate">
-      <p class="navigater-list">
-        
-          <a id="beautifont" class="main-nav-link" href="/">Home</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/archives">Archives</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/about">About</a>
-        
-      </p>
-  </div>
-
-</header>
   
   <div id="container">
     <div id="wrap">
       
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;" href="#" data-toggle="modal" data-target="#myModal">
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpeg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </ul></div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;">
-  
-    <article id="post-In-Journey-with-Flutter" class="article article-type-post" itemscope="" itemprop="blogPost">
+          <section id="main" style="float:none;"><article id="post-In-Journey-with-Flutter" style="width: 75%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div id="articleInner" class="article-inner">
     
     
@@ -191,7 +165,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/04/21/In-Journey-with-Flutter/">In Journey with Flutter</a>
+      In Journey with Flutter
     </h1>
   
 
@@ -212,143 +186,75 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p class="article-excerpt-content">
-          Disini saya mau curhat sedikit tentang Flutter.
+        <p><img width="400" src="/assets/flutter.png" alt="Progressive Web Apps"><br>Disini saya mau curhat sedikit tentang Flutter.</p>
 
-        </p>
-        <p class="article-more-link">
-          <a href="/2019/04/21/In-Journey-with-Flutter/#more">Read More</a>
-        </p>
       
     </div>
     <footer class="article-footer">
       
       
       
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Membuat-PWA-Dengan-Hexo" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/12/28/Membuat-PWA-Dengan-Hexo/">Membuat PWA Dengan Hexo</a>
-    </h1>
-  
+	<section id="comments" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2018/12/28/Membuat-PWA-Dengan-Hexo/" class="article-date">
-	  <time datetime="2018-12-28T06:15:06.000Z" itemprop="datePublished">2018-12-28</time>
-	</a>
+	<script type="text/javascript">
+	var disqus_shortname = 'drzaln';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
 
-      
-    <a class="article-category-link" href="/categories/tutorial/">tutorial</a>
 
-      
-      
 
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-Halo halo, selamat siang!Jadi begini, kemarin saya iseng cari-cari plugin Hexo buat blog ini, nah saya nemu satu plugin yang menarik, namanya hexo-pwa, plugin ini akan membuat blog kita menjadi PWA. 
-Apasih PWA itu? Menurut situs chromeplex, PWA ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2018/12/28/Membuat-PWA-Dengan-Hexo/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
       
       
 
     </footer>
   </div>
   
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div id="articleInner" class="article-inner">
     
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/12/22/hello-world/">Membuat Blog Dengan Hexo</a>
-    </h1>
   
+    <a href="/2018/12/28/Membuat-PWA-Dengan-Hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Membuat PWA Dengan Hexo</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2018/12/22/hello-world/" class="article-date">
-	  <time datetime="2018-12-21T17:00:00.000Z" itemprop="datePublished">2018-12-22</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/tutorial/">tutorial</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Disini saya mau membahas tentang bagaimana sih membuat blog dengan Hexo, untuk penjelasan lebih lanjut tentang Hexo tidak akan saya tulis disini, jadi silahkan baca sendiri ya. Dokumentasi tentang Hexo bisa dibaca disini. Jika ada masalah saat men...
-        </p>
-        <p class="article-more-link">
-          <a href="/2018/12/22/hello-world/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
   
 </article>
 
 <!-- Table of Contents -->
 
-
-  
-
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav">None</ol>
+    
+    </div>
+  </aside>
 
 </section>
         
       </div>
-      
-        <div align="center" style="margin-top: 30px;"><hr class="hr" style="margin:0px; height:3px;"></div>
       
       <footer id="footer">
   
@@ -433,9 +339,9 @@ Apasih PWA itu? Menurut situs chromeplex, PWA ...
 <script src="/js/scripts.js"></script>
 
 
-  <script src="/js/home.js"></script>
 
 
+  <script src="/js/dialog.js"></script>
 
 
 
@@ -523,6 +429,8 @@ Apasih PWA itu? Menurut situs chromeplex, PWA ...
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 <script>if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js?t=1555838910736')

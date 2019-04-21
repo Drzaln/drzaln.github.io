@@ -24,6 +24,8 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
+  precacheUrls.push('/2019/04/21/In-Journey-with-Flutter/');
+
   precacheUrls.push('/2018/12/28/Membuat-PWA-Dengan-Hexo/');
 
   precacheUrls.push('/2018/12/22/hello-world/');
